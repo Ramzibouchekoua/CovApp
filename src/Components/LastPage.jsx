@@ -21,7 +21,7 @@ function LastPage() {
 
   return (
     <div className="lastpage">
-      {tripInformation ? (
+      {history.location.state ? (
         <>
           {" "}
           {arr.map((el, key) => (
@@ -53,7 +53,7 @@ function LastPage() {
           <div className="trip-information">
             <span>
               <CalendarMonthIcon />
-              {tripInformation.Date.format("MM/DD/YYYY")}
+              {tripInformation.Date}
             </span>
             <span>
               <AirlineSeatReclineNormalIcon /> {tripInformation.Number}

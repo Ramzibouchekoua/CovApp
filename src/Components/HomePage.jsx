@@ -77,7 +77,7 @@ function HomePage() {
   }, [originCity, cityDestination]);
   useEffect(() => {
     const obj = {
-      Date: dateTrip,
+      Date: dateTrip.format("MM/DD/YYYY"),
       Number: numberPassenger,
     };
     setTripInformation(obj);
@@ -120,6 +120,7 @@ function HomePage() {
     }
   };
   const submitForm = () => {
+    console.log("aaa", tripInformation);
     history.push({
       pathname: "/LastPage",
       state: {
