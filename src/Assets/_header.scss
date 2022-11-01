@@ -1,7 +1,14 @@
 .header {
   display: flex;
   align-items: center;
-
+  justify-content: center;
+  padding: 20px 0px;
+  background: #000;
+  span {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+  }
   .MuiSvgIcon-root {
     fill: #fff !important;
     font-size: 40px;

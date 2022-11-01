@@ -4,15 +4,6 @@
 @import "./footer.scss";
 @import "./lastPage.scss";
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0px;
-  background: #000;
-  span {
-    font-size: 32px;
-    font-weight: 700;
-    color: #fff;
-  }
+.SnackbarContent-root {
+  background: red !important;
 }

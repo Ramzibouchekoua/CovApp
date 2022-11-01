@@ -104,7 +104,7 @@ function HomePage() {
   };
   const validationForm = () => {
     if (!originCity) {
-      enqueueSnackbar("Origin City is Required");
+      enqueueSnackbar("Origin City is Required", "success");
       setSubmit(false);
     } else if (!cityDestination) {
       enqueueSnackbar("Destination city is Required");
