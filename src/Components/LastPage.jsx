@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { fakeBackEnd } from "./calcul";
 import AirlineSeatReclineNormalIcon from "@mui/icons-material/AirlineSeatReclineNormal";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Button } from "@mui/material";
-import moment from "moment";
+
 function LastPage() {
   const navigate = useLocation();
   const [tripInformation, setTripInformation] = useState(
     navigate.state?.tripInformation
   );
-
-  useEffect(() => {
-    console.log(navigate);
-  }, []);
 
   const arr = fakeBackEnd(
     navigate.state?.originCity,
@@ -61,6 +57,9 @@ function LastPage() {
               <AirlineSeatReclineNormalIcon /> {tripInformation.Number}
             </span>
           </div>
+          <Button variant="outlined">
+            <Link to="/">Back to form</Link>
+          </Button>
         </>
       ) : (
         <>

@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 import { useSnackbar } from "notistack";
 
 function NumberOfPassenger({ numberPassenger, setNumberPassenger, setSubmit }) {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const handleChange = (newValue) => {
     const numberRegex = /^[0-9]*$/;
     if (!numberRegex.test(newValue)) {

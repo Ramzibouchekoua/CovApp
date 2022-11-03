@@ -2,13 +2,7 @@ import React from "react";
 import HomePage from "./Components/HomePage";
 import "./Assets/style.scss";
 import Header from "./Components/Header";
-import {
-  Switch,
-  Route,
-  BrowserRouter,
-  Routes,
-  HashRouter,
-} from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import LastPage from "./Components/LastPage";
 import { SnackbarProvider } from "notistack";
 function App() {

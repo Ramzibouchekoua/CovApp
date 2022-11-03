@@ -1,10 +1,10 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import ComboBox from "./SubComponents/ComboBox";
 import DatePickerComp from "./SubComponents/DatePickerComp";
 import NumberOfPassenger from "./SubComponents/NumberOfPassenger";
 import ComboBoxIntermidiateCity from "./SubComponents/ComboBoxIntermidiateCity";
-import { calcul, fakeBackEnd } from "./calcul";
+import { calcul } from "./calcul";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import moment from "moment";
@@ -21,7 +21,7 @@ function HomePage() {
   const [submit, setSubmit] = useState(false);
   const history = useNavigate();
 
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const dataFrance = [
     ["Paris", 48.856614, 2.352222],
 
@@ -120,7 +120,6 @@ function HomePage() {
     }
   };
   const submitForm = () => {
-    console.log("aaa", tripInformation);
     history("/LastPage", {
       state: {
         originCity,

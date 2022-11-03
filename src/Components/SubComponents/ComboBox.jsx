@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import PropTypes from "prop-types";
@@ -16,7 +16,7 @@ function ComboBox({ Data, Label, handleChange, value, lengthTab }) {
           handleChange(Label, event.target.innerText, lengthTab)
         }
         value={value?.label}
-        sx={{ width: 300 }}
+        sx={Label === "Intermidiate city" ? { width: 230 } : { width: 300 }}
         renderInput={(params) => (
           <TextField {...params} label={Label} value={value?.label} />
         )}
