@@ -5,7 +5,7 @@ import DatePickerComp from "./SubComponents/DatePickerComp";
 import NumberOfPassenger from "./SubComponents/NumberOfPassenger";
 import ComboBoxIntermidiateCity from "./SubComponents/ComboBoxIntermidiateCity";
 import { calcul, fakeBackEnd } from "./calcul";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import moment from "moment";
 
@@ -19,7 +19,7 @@ function HomePage() {
   const [valueIntermidite, setValueIntermidiate] = useState([]);
   const [tripInformation, setTripInformation] = useState();
   const [submit, setSubmit] = useState(false);
-  const history = useHistory();
+  const history = useNavigate();
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const dataFrance = [
@@ -121,8 +121,7 @@ function HomePage() {
   };
   const submitForm = () => {
     console.log("aaa", tripInformation);
-    history.push({
-      pathname: "/LastPage",
+    history("/LastPage", {
       state: {
         originCity,
         cityDestination,

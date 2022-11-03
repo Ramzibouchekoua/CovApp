@@ -9,7 +9,6 @@ function ComboBoxIntermidiateCity({
   setValueIntermidiate,
   Data,
   handleChange,
-  index,
 }) {
   const addInput = () => {
     const tempArray = [...valueIntermidite];

@@ -3,19 +3,7 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import PropTypes from "prop-types";
 
-function ComboBox({
-  Data,
-  Label,
-  cityDestination,
-  setCityDestination,
-  originCity,
-  setOriginCity,
-  valueIntermidite,
-  setValueIntermidiate,
-  handleChange,
-  value,
-  lengthTab,
-}) {
+function ComboBox({ Data, Label, handleChange, value, lengthTab }) {
   return (
     <div>
       <Autocomplete
@@ -40,7 +28,6 @@ function ComboBox({
 ComboBox.propTypes = {
   data: PropTypes.array,
   label: PropTypes.string,
-  key: PropTypes.number,
 };
 ComboBox.defaultProps = {
   data: ["No Data"],

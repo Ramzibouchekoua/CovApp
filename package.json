@@ -1,5 +1,5 @@
 {
-  "homepage": "https://covapptn.herokuapp.com/",
+  "homepage": ".",
   "name": "cov-app",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +19,7 @@
     "notistack": "^2.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.4",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"

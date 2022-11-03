@@ -1,33 +1,35 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { fakeBackEnd } from "./calcul";
 import AirlineSeatReclineNormalIcon from "@mui/icons-material/AirlineSeatReclineNormal";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Button } from "@mui/material";
 import moment from "moment";
 function LastPage() {
-  const history = useHistory();
+  const navigate = useLocation();
   const [tripInformation, setTripInformation] = useState(
-    history.location.state?.tripInformation
+    navigate.state?.tripInformation
   );
-  // const passengerNumber = history.location.state?.numberPassenger;
-  // const date = history.location.state?.dateTrip;
+
+  useEffect(() => {
+    console.log(navigate);
+  }, []);
 
   const arr = fakeBackEnd(
-    history.location.state?.originCity,
-    history.location.state?.cityDestination,
-    history.location.state?.valueIntermidite
+    navigate.state?.originCity,
+    navigate.state?.cityDestination,
+    navigate.state?.valueIntermidite
   );
 
   return (
     <div className="lastpage">
-      {history.location.state ? (
+      {navigate.state ? (
         <>
           {" "}
-          {arr.map((el, key) => (
+          {arr?.map((el, key) => (
             <>
               {key < arr.length - 1 && (
-                <div className="distance-components" key={key}>
+                <div className="distance-components">
                   <span className="city bold">{el.label}</span>
                   <span> to </span>
                   <span className="city bold"> {arr[key + 1]?.label} </span>
