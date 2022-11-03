@@ -131,47 +131,49 @@ function HomePage() {
   };
   return (
     <div className="homepage">
-      <span className="introduction">Welcome to CovApp</span>
-      <span>Please fill the form</span>
-      <ComboBox
-        Data={newArray}
-        Label={"Origin city"}
-        originCity={originCity}
-        setOriginCity={setOriginCity}
-        handleChange={handleChange}
-      />
-      <ComboBoxIntermidiateCity
-        valueIntermidite={valueIntermidite}
-        setValueIntermidiate={setValueIntermidiate}
-        Data={newArray}
-        handleChange={handleChange}
-      />
-      <ComboBox
-        Data={newArray}
-        Label={"City of destination"}
-        cityDestination={cityDestination}
-        setCityDestination={setCityDestination}
-        handleChange={handleChange}
-      />
-      <NumberOfPassenger
-        numberPassenger={numberPassenger}
-        setNumberPassenger={setNumberPassenger}
-        setSubmit={setSubmit}
-      />
-      <DatePickerComp
-        dateTrip={dateTrip}
-        setDateTrip={setDateTrip}
-        tomorrowMoment={tomorrowMoment}
-      />
-      <Button
-        variant="outlined"
-        color="success"
-        sx={{ width: 250 }}
-        disabled={submit === true ? false : true}
-        onClick={() => submitForm()}
-      >
-        Submit
-      </Button>
+      <div className="container">
+        <span className="introduction">Welcome to CovApp</span>
+        <span>Please fill the form</span>
+        <ComboBox
+          Data={newArray}
+          Label={"Origin city"}
+          originCity={originCity}
+          setOriginCity={setOriginCity}
+          handleChange={handleChange}
+        />
+        <ComboBoxIntermidiateCity
+          valueIntermidite={valueIntermidite}
+          setValueIntermidiate={setValueIntermidiate}
+          Data={newArray}
+          handleChange={handleChange}
+        />
+        <ComboBox
+          Data={newArray}
+          Label={"City of destination"}
+          cityDestination={cityDestination}
+          setCityDestination={setCityDestination}
+          handleChange={handleChange}
+        />
+        <NumberOfPassenger
+          numberPassenger={numberPassenger}
+          setNumberPassenger={setNumberPassenger}
+          setSubmit={setSubmit}
+        />
+        <DatePickerComp
+          dateTrip={dateTrip}
+          setDateTrip={setDateTrip}
+          tomorrowMoment={tomorrowMoment}
+        />
+        <Button
+          variant="outlined"
+          color="success"
+          sx={{ width: 250 }}
+          disabled={submit === true ? false : true}
+          onClick={() => submitForm()}
+        >
+          Submit
+        </Button>
+      </div>
     </div>
   );
 }

@@ -19,56 +19,58 @@ function LastPage() {
 
   return (
     <div className="lastpage">
-      {navigate.state ? (
-        <>
-          {" "}
-          {arr?.map((el, key) => (
-            <>
-              {key < arr.length - 1 && (
-                <div className="distance-components">
-                  <span className="city bold">{el.label}</span>
-                  <span> to </span>
-                  <span className="city bold"> {arr[key + 1]?.label} </span>
-                  <span className="bold">
-                    {Math.round(arr[key + 1]?.distance) + "Km"}
-                  </span>
-                </div>
-              )}
-            </>
-          ))}
-          <div className="total-distance">
-            <span className="bold">Total</span>
-            <span className="bold">
-              {Math.round(
-                arr.reduce(
-                  (total, item) =>
-                    total + (item?.distance ? item?.distance : 0),
-                  0
-                )
-              ) + "Km"}
-            </span>
-          </div>
-          <div className="trip-information">
-            <span>
-              <CalendarMonthIcon />
-              {tripInformation.Date}
-            </span>
-            <span>
-              <AirlineSeatReclineNormalIcon /> {tripInformation.Number}
-            </span>
-          </div>
-          <Button variant="outlined">
-            <Link to="/">Back to form</Link>
-          </Button>
-        </>
-      ) : (
-        <>
-          <span className="warning-information">No data available </span>
-          <Button variant="outlined">
-            <Link to="/">Back to form</Link>
-          </Button>
-        </>
-      )}
+      <div className="container">
+        {navigate.state ? (
+          <>
+            {" "}
+            {arr?.map((el, key) => (
+              <>
+                {key < arr.length - 1 && (
+                  <div className="distance-components">
+                    <span className="city bold">{el.label}</span>
+                    <span> to </span>
+                    <span className="city bold"> {arr[key + 1]?.label} </span>
+                    <span className="bold">
+                      {Math.round(arr[key + 1]?.distance) + "Km"}
+                    </span>
+                  </div>
+                )}
+              </>
+            ))}
+            <div className="total-distance">
+              <span className="bold">Total</span>
+              <span className="bold">
+                {Math.round(
+                  arr.reduce(
+                    (total, item) =>
+                      total + (item?.distance ? item?.distance : 0),
+                    0
+                  )
+                ) + "Km"}
+              </span>
+            </div>
+            <div className="trip-information">
+              <span>
+                <CalendarMonthIcon />
+                {tripInformation.Date}
+              </span>
+              <span>
+                <AirlineSeatReclineNormalIcon /> {tripInformation.Number}
+              </span>
+            </div>
+            <Button variant="outlined">
+              <Link to="/">Back to form</Link>
+            </Button>
+          </>
+        ) : (
+          <>
+            <span className="warning-information">No data available </span>
+            <Button variant="outlined">
+              <Link to="/">Back to form</Link>
+            </Button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
